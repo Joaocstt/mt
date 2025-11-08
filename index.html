@@ -6,28 +6,21 @@
   <title>Mentoria Dev • Rio Branco</title>
   <meta name="description" content="Mentoria prática com desenvolvedores que já atuam no mercado em Rio Branco. Acelere sua carreira com projetos reais, encontros ao vivo e acompanhamento de perto."/>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- AOS (scroll animations) -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
 
-  <!-- GSAP + ScrollTrigger (micro animações & parallax) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defear></script>
 
-  <!-- VanillaTilt (efeito tilt 3D) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
 
-  <!-- tsParticles (efeito de partículas no fundo) -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js" defer></script>
 
-  <!-- Lenis (smooth scroll) — com fallback -->
   <script id="lenis-cdn" src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.35/bundled/lenis.min.js" defer onerror="(function(){var s=document.createElement('script');s.src='https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js';s.defer=true;document.head.appendChild(s);})();"></script>
 
   <script>
-    /* Tailwind custom */
     tailwind.config = {
       theme: {
         extend: {
@@ -40,20 +33,15 @@
     }
   </script>
   <style>
-    /* Grid sutil + mesh gradient animada */
     .bg-grid { background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 40px 40px, 40px 40px; background-position: -1px -1px, -1px -1px; mask-image: radial-gradient(ellipse at 50% 0%, rgba(0,0,0,.8), transparent 70%); }
     .mesh:before, .mesh:after { content:''; position:absolute; inset:auto; width:46rem; height:46rem; border-radius:9999px; filter: blur(90px); opacity:.35; z-index:-1; }
     .mesh:before{ background: radial-gradient(circle at 30% 30%, #3B82F6, transparent 60%); top:-8rem; left:-8rem; }
     .mesh:after { background: radial-gradient(circle at 70% 60%, #8B5CF6, transparent 60%); bottom:-10rem; right:-10rem; }
     @keyframes float { 0% { transform: translateY(0) } 50% { transform: translateY(-8px) } 100% { transform: translateY(0) } }
     .float { animation: float 6s ease-in-out infinite }
-    /* Partículas cobrem o fundo */
     #tsparticles { position: fixed; inset: 0; z-index: -2; }
-    /* Blob de cursor interativo */
     .cursor-blob { position: fixed; top:0; left:0; width:180px; height:180px; border-radius:50%; pointer-events:none; mix-blend-mode:soft-light; background: radial-gradient(circle at 30% 30%, rgba(59,130,246,.6), transparent 60%); transform: translate(-50%, -50%); z-index: 40; }
-    /* Botão magnético */
     .magnet { transition: transform .15s ease; }
-    /* Diagnóstico */
     .badge { font-size:.7rem; padding:.15rem .5rem; border-radius:.5rem }
   </style>
 </head>
@@ -61,7 +49,6 @@
   <div id="tsparticles"></div>
   <div class="cursor-blob" id="cursorBlob"></div>
 
-  <!-- NAV -->
   <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/70 bg-zinc-950/90">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-2 font-extrabold tracking-tight text-xl">
@@ -85,7 +72,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section id="home" class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-brand-900/30 via-zinc-950 to-zinc-950"></div>
     <div class="absolute inset-0 bg-grid pointer-events-none"></div>
@@ -144,7 +130,6 @@
     </div>
   </section>
 
-  <!-- SOBRE -->
   <section id="sobre" class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-10">
@@ -167,7 +152,6 @@
     </div>
   </section>
 
-  <!-- MENTORES -->
   <section id="mentores" class="py-20 bg-zinc-900/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between gap-6 mb-10">
@@ -195,8 +179,6 @@
           <h3 class="mt-4 font-semibold">Wesley Higor</h3>
           <p class="text-sm text-zinc-400">Front-End</p>
         </article>
-
-
       </div>
     </div>
   </section>
@@ -210,7 +192,6 @@
 
     <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       
-      <!-- FUNDAMENTOS -->
       <article class="tilt-card group relative rounded-2xl bg-zinc-900 ring-1 ring-white/10 p-6 flex flex-col" data-aos="fade-up">
         <div class="flex items-center justify-between">
           <h3 class="font-semibold">Fundamentos</h3>
@@ -226,7 +207,6 @@
         <a href="#inscricao" class="magnet mt-6 inline-flex justify-center rounded-xl bg-brand-600 hover:bg-brand-500 transition px-4 py-2 font-semibold">Quero esse</a>
       </article>
 
-      <!-- FRONT END -->
       <article class="tilt-card group relative rounded-2xl bg-zinc-900 ring-1 ring-white/10 p-6 flex flex-col" data-aos="fade-up">
         <div class="flex items-center justify-between">
           <h3 class="font-semibold">Front End</h3>
@@ -242,7 +222,6 @@
         <a href="#inscricao" class="magnet mt-6 inline-flex justify-center rounded-xl bg-brand-600 hover:bg-brand-500 transition px-4 py-2 font-semibold">Quero esse</a>
       </article>
 
-      <!-- BACK END -->
       <article class="tilt-card group relative rounded-2xl bg-zinc-900 ring-1 ring-white/10 p-6 flex flex-col" data-aos="fade-up" data-aos-delay="100">
         <div class="flex items-center justify-between">
           <h3 class="font-semibold">Back End</h3>
@@ -258,7 +237,6 @@
         <a href="#inscricao" class="magnet mt-6 inline-flex justify-center rounded-xl bg-brand-600 hover:bg-brand-500 transition px-4 py-2 font-semibold">Quero esse</a>
       </article>
 
-      <!-- MOBILE -->
       <article class="tilt-card group relative rounded-2xl bg-zinc-900 ring-1 ring-white/10 p-6 flex flex-col" data-aos="fade-up" data-aos-delay="150">
         <div class="flex items-center justify-between">
           <h3 class="font-semibold">Mobile</h3>
@@ -274,7 +252,6 @@
         <a href="#inscricao" class="magnet mt-6 inline-flex justify-center rounded-xl bg-brand-600 hover:bg-brand-500 transition px-4 py-2 font-semibold">Quero esse</a>
       </article>
 
-      <!-- FULL STACK -->
       <article class="tilt-card group relative rounded-2xl bg-zinc-900 ring-2 ring-brand-500 p-6 flex flex-col" data-aos="fade-up" data-aos-delay="200">
         <div class="flex items-center justify-between">
           <h3 class="font-semibold">Full Stack</h3>
@@ -297,7 +274,6 @@
 </section>
 
 
-  <!-- PROGRAMA -->
   <section class="py-20 bg-zinc-900/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-10">
@@ -390,7 +366,6 @@
 
 
 
-  <!-- FAQ -->
   <section id="faq" class="py-20 bg-zinc-900/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
